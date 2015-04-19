@@ -1,0 +1,44 @@
+
+
+<?php
+// module/Album/view/album/album/add.phtml:
+
+$title = 'Welcome';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<h2><?php echo $this->escapeHtml("Please sign up"); ?></h2>
+<?php
+$form->setAttribute('action', $this->url('signup', array('action' => 'signup')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<?php if($error){ ?>
+    <div class="alert alert-danger">
+        <span class="glyphicon glyphicon-remove"></span><strong>User already exists.</strong>
+    </div>
+<?php } ?>
+
+<div class="form-group">
+    <?php echo $this->formRow($form->get('name')); ?>
+</div >
+<div class="form-group">
+    <?php echo $this->formRow($form->get('email')); ?>
+</div >
+<div class="form-group">
+    <?php echo $this->formRow($form->get('password')); ?>
+</div >
+
+<?php echo $this->formSubmit($form->get('submit')); ?>
+
+<?php echo $this->formRow($form->get('campaign')); ?>
+<?php echo $this->form()->closeTag(); ?>
+
+
+
+
+
+
+
+
