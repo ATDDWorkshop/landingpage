@@ -15,6 +15,7 @@ Example calls
 
 Installation
 ------------
+
     git clone https://github.com/ATDDWorkshop/landingpage.git
 
 Assuming you already have Composer:
@@ -23,7 +24,7 @@ Assuming you already have Composer:
 
 Add a alias to your /etc/hosts
 
-    127.0.0.1   landingpage    
+    127.0.0.1   landingpage
 
 ### PHP CLI Server
 

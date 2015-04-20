@@ -21,25 +21,25 @@ class SignupController extends AbstractActionController
     public function signupAction()
     {
         $form = new SignupForm($this->params()->fromQuery("camp"));
-        $error=false;
+        $error = false;
 
         $request = $this->getRequest();
-        if($request->isPost()){
+        if ($request->isPost()) {
             $user = new User();
             $form->setInputFilter($user->getInputFilter());
             $form->setData($request->getPost());
 
-            if($form->isValid()){
+            if ($form->isValid()) {
                 $user->exchangeArray($form->getData());
 
-                if($user->save()){
+                if ($user->save()) {
                     return $this->redirect()->toUrl("http://shop");
-                }else{
-                    $error=true;
+                } else {
+                    $error = true;
                 }
             }
         }
-        return array('form' => $form,'error'=> $error,'camp'=>$camp);
+        return array('form' => $form, 'error' => $error, 'camp' => $camp);
 
     }
 }

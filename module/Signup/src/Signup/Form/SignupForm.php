@@ -11,7 +11,7 @@ use Zend\Form\Form;
 
 class SignupForm extends Form
 {
-    public function __construct($camp= "DEFAULT")
+    public function __construct($camp = "DEFAULT")
     {
         // we want to ignore the name passed
         parent::__construct('signup');
@@ -51,8 +51,7 @@ class SignupForm extends Form
         $this->add(array(
             'name' => 'campaign',
             'type' => 'hidden',
-            'options' => array(
-            ),
+            'options' => array(),
             'attributes' => array(
                 'value' => $camp,
             ),

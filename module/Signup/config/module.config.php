@@ -15,15 +15,15 @@ return array(
     'router' => array(
         'routes' => array(
             'signup' => array(
-                'type'    => 'segment',
+                'type' => 'segment',
                 'options' => array(
-                    'route'    => '/[/:action]',
+                    'route' => '/[/:action]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*'
                     ),
                     'defaults' => array(
                         'controller' => 'Signup\Controller\Signup',
-                        'action'     => 'signup',
+                        'action' => 'signup',
                     ),
                 ),
             ),
